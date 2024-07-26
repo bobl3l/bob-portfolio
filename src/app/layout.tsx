@@ -4,7 +4,7 @@ import { poppins } from "@/app/ui/fonts";
 
 export const metadata: Metadata = {
   title: "Bob's Portfolio",
-  description: "Codes for Hire ;)",
+  description: "Code for Hire ;)",
 };
 
 export default function RootLayout({

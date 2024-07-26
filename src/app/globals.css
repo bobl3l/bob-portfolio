@@ -10,8 +10,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 128, 128, 128;
-    --background-start-rgb: 0, 0, 0;
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 17, 9, 23;
     --background-end-rgb: 0, 0, 0;
   }
 }
@@ -30,4 +30,23 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+:hover {
+  transition: 0.3s;
+}
+
+.tag {
+  text-align: center;
+  border-radius: 100px;
+  background-color: rgba(128, 128, 128, 0.507);
+  padding: 6px 15px;
+}
+
+svg:hover {
+  fill: white;
+}
+
+nav {
+  background: hsla(0, 0%, 7%, 0.25);
+  backdrop-filter: blur(100px);
 }
