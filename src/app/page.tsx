@@ -1,6 +1,19 @@
+"use client";
+
 import softeng from "@/asset/softwareeng.png";
-import { Experience, LogoLink } from "./ui/ui";
+import feat from "@/asset/feat.png";
+import kungfood from "@/asset/kungfood hippo.png";
+import flight from "@/asset/flight simulator.png";
+import web from "@/asset/website.png";
+import { Experience, LogoLink, Projects } from "./ui/ui";
+import React from "react";
+
 export default function Home() {
+  const about = React.useRef<HTMLDivElement>(null);
+  const exp = React.useRef<HTMLDivElement>(null);
+  const proj = React.useRef<HTMLDivElement>(null);
+  const cert = React.useRef<HTMLDivElement>(null);
+
   return (
     <div className="min-h-full ">
       <nav className="bg-black opacity-90 fixed w-full backdrop-blur-2xl">
@@ -10,29 +23,29 @@ export default function Home() {
               <div className="hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   <a
-                    href="#"
-                    className="rounded-md bg-black px-3 py-2 text-sm font-medium text-white"
+                    onClick={() => about.current?.scrollIntoView()}
+                    className="rounded-md  px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white hover:border-3"
                     aria-current="page"
                   >
                     About me
                   </a>
                   <a
-                    href="#"
-                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    onClick={() => exp.current?.scrollIntoView()}
+                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white hover:border-3"
                   >
                     Experiences
                   </a>
                   <a
-                    href="#"
-                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    onClick={() => proj.current?.scrollIntoView()}
+                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white hover:border-3"
                   >
                     Projects
                   </a>
                   <a
-                    href="#"
-                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    onClick={() => cert.current?.scrollIntoView()}
+                    className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white hover:border-3"
                   >
-                    Skills & Qualifications
+                    Certifications
                   </a>
                 </div>
               </div>
@@ -65,9 +78,11 @@ export default function Home() {
             <img src={softeng.src} className="max-h-[60vh]" alt="softeng" />
           </div>
         </div>
-
         {/*About me panel */}
-        <div className="mx-auto max-w-[140vh] mt-40 px-4 py-6 sm:px-6 lg:px-12 flex justify-start items-center">
+        <div
+          ref={about}
+          className="mx-auto max-w-[140vh] pt-40 px-4 py-6 sm:px-6 lg:px-12 flex justify-start items-center"
+        >
           <hr className="flex-grow border-t border-purple-500" />
           <span className="px-3 text-purple-500 text-6xl font-black">
             About me
@@ -76,14 +91,14 @@ export default function Home() {
         <div className="mx-auto max-w-[140vh]  px-4 py-6 sm:px-6 lg:px-12  flex justify-between items-start ">
           <div className="max-w-[90vh] font-light flex flex-col gap-5 justify-start items-start">
             <p className="text-xl text-white">
-              Hi, I'm Bob. I am fresh graduate from Singapore starting a career
-              in software development. I have always been interested in the
-              development of web applications and software so I dabbled myself
-              in all aspects of them. I have experience working on UI/UX design,
-              machine learning, front end development and back end engineering.I
-              am specialised in frontend development, with proficiencies in
-              multiple web app development framworks such as React, React Native
-              and Flutter.
+              Hi, I&apos;m Bob. I am fresh graduate from Singapore starting a
+              career in software development. I have always been interested in
+              the development of web applications and software so I dabbled
+              myself in all aspects of them. I have experience working on UI/UX
+              design, machine learning, front end development and back end
+              engineering.I am specialised in frontend development, with
+              proficiencies in multiple web app development framworks such as
+              React, React Native and Flutter.
             </p>
             <p className="text-xl text-white">
               For my most recent working experience, I was working with a stack
@@ -94,9 +109,10 @@ export default function Home() {
             </p>
             <p className="text-xl text-white">
               I am currently looking for junior level opportunites in the United
-              Kingdom. If you think I will be a good fit for the company, please
-              feel free to contact me! I am looking forward to contributing to
-              the success of your company.
+              Kingdom under the High Potential Individual (HPI) visa. *No visa
+              sponsorship required* If you think I will be a good fit for the
+              company, please feel free to contact me! I am looking forward to
+              contributing to the success of your company.
             </p>
             <div className=" flex gap-3 md:gap-5 justify-start items-center">
               <h1 className="text-3xl font-medium tracking-tight text-purple-400">
@@ -165,9 +181,11 @@ export default function Home() {
             </p>
           </div>
         </div>
-
         {/*Experience panel */}
-        <div className="mx-auto max-w-[140vh] mt-60 px-4 py-6 sm:px-6 lg:px-12  flex justify-start items-center">
+        <div
+          ref={exp}
+          className="mx-auto max-w-[140vh] pt-60 px-4 py-6 sm:px-6 lg:px-12  flex justify-start items-center"
+        >
           <span className="px-3 text-purple-500 text-6xl font-black">
             Experience
           </span>
@@ -181,7 +199,7 @@ export default function Home() {
           des={[
             "- Worked hand in hand with CEO to create a B2B contract allocating mobile application.",
             "- Completed the UI/UX design and front end development as the sole developer.",
-            "- Co-operated with the tech team to integrate the company's existing server and database into the application.",
+            "- Co-operated with the tech team to integrate the company&apos;s existing server and database into the application.",
           ]}
         ></Experience>
         <Experience
@@ -192,20 +210,88 @@ export default function Home() {
           des={[
             "Highlight:",
             "Overseas Entrepreneurship Programme (OEP):",
-            " - As a part of the government's entrepreneurship special programme, I received scholarship to participate in an overseas apprenticeship programme. By working under a fast rising startup, I was able to learn about the business model and explore the market opportunities in tech in the region I was posted to.",
+            " - As a part of the government&apos;s entrepreneurship special programme, I received scholarship to participate in an overseas apprenticeship programme. By working under a fast rising startup, I was able to learn about the business model and explore the market opportunities in tech in the region I was posted to.",
           ]}
         ></Experience>
-
         {/*Project panel */}
-        <div className="mx-auto max-w-[140vh] mt-60 px-4 py-6 sm:px-6 lg:px-12  flex justify-start items-center">
+        <div
+          ref={proj}
+          className="mx-auto max-w-[140vh] pt-60 px-4 py-6 sm:px-6 lg:px-12  flex justify-start items-center"
+        >
           <hr className="flex-grow border-t border-purple-500" />
           <span className="px-3 text-purple-500 text-6xl font-black">
             Projects
           </span>
         </div>
-        <div className="mx-auto max-w-[120vh] px-4 py-6 sm:px-6 lg:px-12 flex justify-start items-center rounded-lg  bg-white ">
-          hi
+        <div className="flex-1 flex-col ">
+          <Projects
+            project="FEAT- fitness & health mobile application"
+            stack="Dart - Flutter - Node.js - Firebase - Photoshop"
+            gitlink="https://github.com/bobl3l/FEAT-FYP"
+            des="As a final year project to consolidate my degree, This project aims to create a market standard software by replicating the commercial software development process. This application has the capabilities to authenticate users, keep track of their fitness data, personalised their health goals and settings, and provide fitness and dietary guide."
+            img={feat.src}
+          ></Projects>
+          <Projects
+            project="West Coast Collection - e-commerce website"
+            stack="HTML - CSS - JavaScript - PHP - MySQL - Photoshop"
+            gitlink="https://github.com/bobl3l/IE4717-web-design-project"
+            des="This web design project aims to demonstrate my full stack web dev abilities by performing graphic design, UI/UX design and wireframing the website. Then develop the website with its own backend server and database."
+            img={web.src}
+          ></Projects>
+          <Projects
+            project="KungFood Panda - delivery mobile application"
+            stack="Javascript - React Native - SQLite - After Effect - Photoshop"
+            gitlink="https://github.com/bobl3l/DIP-mobile-app-project-foodpanda-"
+            des="A large team collaborative project with the goal of replicating the popular food delivery mobile application 'FoodPanda'."
+            img={kungfood.src}
+          ></Projects>
+          <Projects
+            project="Unity flight simulator game"
+            stack="Unity - C#"
+            gitlink="https://github.com/bobl3l/flight-simulator-project"
+            des="A unity game project that is scripted by C# with self generating map."
+            img={flight.src}
+          ></Projects>
         </div>
+        {/*Certifications panel */}
+        <div
+          ref={cert}
+          className="mx-auto max-w-[140vh] pt-60 px-4 py-6 sm:px-6 lg:px-12  flex justify-start items-center"
+        >
+          <span className="px-3 text-purple-500 text-6xl font-black">
+            Certifications
+          </span>
+          <hr className="flex-grow border-t border-purple-500" />
+        </div>
+        <div className="mx-auto max-w-[140vh] px-4 py-6 sm:px-6 lg:px-12  flex-1 justify-start items-center">
+          <div className="mx-auto max-w-[110vh] py-2 flex justify-between items-center">
+            <span className="text-2xl">Cloud Computing Foundations</span>
+            <span className="text-purple-400">Duke University</span>
+          </div>
+          <div className="mx-auto max-w-[110vh] py-2  flex justify-between items-center">
+            <span className="text-2xl">
+              Exploring and Preparing your Data with BigQuery
+            </span>
+            <span className="text-purple-400">Google Cloud Education</span>
+          </div>
+          <div className="mx-auto max-w-[110vh] py-2  flex justify-between items-center">
+            <span className="text-2xl">Introduction to Big Data</span>
+            <span className="text-purple-400">UC San Diego</span>
+          </div>
+          <div className="mx-auto max-w-[110vh] py-2  flex justify-between items-center">
+            <span className="text-2xl">
+              Python for Everybody Specialization
+            </span>
+            <span className="text-purple-400">University of Michigan</span>
+          </div>
+          <div className="mx-auto max-w-[110vh] py-2  flex justify-between items-center">
+            <span className="text-2xl">
+              Innovation: From Creativity to Entrepreneurship Specialization
+            </span>
+            <span className="text-purple-400">University of Illinois</span>
+          </div>
+        </div>
+        <div className="mx-auto h-80"></div>
       </main>
     </div>
   );
