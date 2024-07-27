@@ -1,6 +1,6 @@
 export function LogoLink({ path, link }: { path: string; link: string }) {
   return (
-    <a href={link} key={link}>
+    <a href={link}>
       <svg
         className="w-7 md:w-10 hover:scale-105  "
         fill="grey"
@@ -26,14 +26,13 @@ export function Experience({
   des: Array<string>;
 }) {
   const fulldes = des.map((n) => (
-    <span>
+    <span key={n}>
       {n}
       <br></br>
     </span>
   ));
   return (
     <div
-      key={company}
       className=" mx-auto max-w-[130vh] flex-col gap-6 px-4 py-6 sm:px-6 lg:px-12 text-2xl font-medium
 px-4 py-6 sm:px-6 lg:px-12 text-2xl font-medium"
     >
@@ -64,10 +63,7 @@ export function Projects({
   img: string;
 }) {
   return (
-    <div
-      key={project}
-      className="mx-auto max-w-[120vh] px-4 py-6 sm:px-6 my-10 lg:px-12 flex gap-4 justify-between items-start rounded-lg  bg-white bg-opacity-5 "
-    >
+    <div className="mx-auto max-w-[120vh] px-4 py-6 sm:px-6 my-10 lg:px-12 flex gap-4 justify-between items-start rounded-lg  bg-white bg-opacity-5 ">
       <div className="flex-col flex-1 gap-2 max-w-[88vh]">
         <div className="max-w-[88vh] flex justify-between items-center">
           <p className="text-xl">{project}</p>
