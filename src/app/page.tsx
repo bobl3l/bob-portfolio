@@ -65,7 +65,7 @@ export default function Home() {
               Bob Liang
             </div>
             <h1 className="text-3xl font-light tracking-tight text-white">
-              I am an aspiring software developer ;)
+              I am a software developer / UX engineer ;)
             </h1>
             <a
               className="max-w-40 bg-purple-900 hover:bg-purple-600 text-white font-black hover:scale-105 text-xs md:text-lg font-semibold p-3 rounded-xl text-center"
@@ -176,6 +176,8 @@ export default function Home() {
             <p className=" gap-3 flex flex-wrap justify-between">
               <span className="tag">Photoshop</span>
               <span className="tag">LightRoom</span>
+              <span className="tag">Fresco</span>
+              <span className="tag">After Effect</span>
               <span className="tag">Figma</span>
               <span className="tag">Canva</span>
             </p>
@@ -199,7 +201,7 @@ export default function Home() {
           des={[
             "- Worked hand in hand with CEO to create a B2B contract allocating mobile application.",
             "- Completed the UI/UX design and front end development as the sole developer.",
-            "- Co-operated with the tech team to integrate the company&apos;s existing server and database into the application.",
+            "- Co-operated with the tech team to integrate the company's existing server and database into the application.",
           ]}
         ></Experience>
         <Experience
@@ -210,7 +212,7 @@ export default function Home() {
           des={[
             "Highlight:",
             "Overseas Entrepreneurship Programme (OEP):",
-            " - As a part of the government&apos;s entrepreneurship special programme, I received scholarship to participate in an overseas apprenticeship programme. By working under a fast rising startup, I was able to learn about the business model and explore the market opportunities in tech in the region I was posted to.",
+            " - As a part of the government's entrepreneurship special programme, I received scholarship to participate in an overseas apprenticeship programme. By working under a fast rising startup, I was able to learn about the business model and explore the market opportunities in tech in the region I was posted to.",
           ]}
         ></Experience>
         {/*Project panel */}
@@ -226,14 +228,14 @@ export default function Home() {
         <div className="flex-1 flex-col ">
           <Projects
             project="FEAT- fitness & health mobile application"
-            stack="Dart - Flutter - Node.js - Firebase - Photoshop"
+            stack="Dart - Flutter - Node.js - Firebase - Photoshop - Figma"
             gitlink="https://github.com/bobl3l/FEAT-FYP"
             des="As a final year project to consolidate my degree, This project aims to create a market standard software by replicating the commercial software development process. This application has the capabilities to authenticate users, keep track of their fitness data, personalised their health goals and settings, and provide fitness and dietary guide."
             img={feat.src}
           ></Projects>
           <Projects
             project="West Coast Collection - e-commerce website"
-            stack="HTML - CSS - JavaScript - PHP - MySQL - Photoshop"
+            stack="HTML - CSS - JavaScript - PHP - MySQL - Photoshop - Figma"
             gitlink="https://github.com/bobl3l/IE4717-web-design-project"
             des="This web design project aims to demonstrate my full stack web dev abilities by performing graphic design, UI/UX design and wireframing the website. Then develop the website with its own backend server and database."
             img={web.src}
