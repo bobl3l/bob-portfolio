@@ -194,9 +194,22 @@ export default function Home() {
           <hr className="flex-grow border-t border-purple-500" />
         </div>
         <Experience
+          company="Webzaito"
+          duration="May - Sep 2024"
+          title="Front end Software Developer"
+          location="Singapore"
+          des={[
+            "- Contributed in UI/UX and component design and create, launch web apps and web pages according to clients' requirements",
+            "- Integrated mobile devices compatibility on these web apps to increase website traffic by 35%",
+            "- Debug and revamp existing code and website appearance under Agile development cycle",
+            "- Implement data visualisation using Python libraries such as seaborn/plotly to optimise data analytic by 20%",
+            "- Assist in client consulting regarding product design and suggesting viable software solutions",
+          ]}
+        ></Experience>
+        <Experience
           company="AirCity Global Pte. Ltd. (startup)"
           duration="Jan - Jun 2023"
-          title="Full Stack Software Developer"
+          title="Full Stack Software Developer Intern"
           location="Ho Chi Minh City, Viet Nam"
           des={[
             "- Worked hand in hand with CEO to create a B2B contract allocating mobile application.",
