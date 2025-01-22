@@ -34,10 +34,13 @@ body {
 }
 
 .tag {
-  text-align: center;
-  border-radius: 100px;
-  background-color: rgba(128, 128, 128, 0.507);
-  padding: 6px 15px;
+  @apply px-3 py-1.5 
+         bg-purple-500/20 
+         text-purple-400 
+         rounded-full 
+         text-sm md:text-base
+         transition-all
+         hover:bg-purple-500/30;
 }
 
 svg:hover {

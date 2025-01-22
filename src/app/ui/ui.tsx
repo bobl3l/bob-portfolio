@@ -32,10 +32,7 @@ export function Experience({
     </span>
   ));
   return (
-    <div
-      className=" mx-auto max-w-[130vh] flex-col gap-6 px-4 py-6 sm:px-6 lg:px-12 text-2xl font-medium
-px-4 py-6 sm:px-6 lg:px-12 text-2xl font-medium"
-    >
+    <div className=" mx-auto max-w-[130vh] flex-col gap-6 px-4 py-6 sm:px-6 lg:px-12 text-2xl font-medium">
       <div className="mx-auto flex pb-3 justify-between items-start ">
         <p className="text-purple-400">{company}</p>
         {duration}
@@ -76,6 +73,85 @@ export function Projects({
         <p>{des}</p>
       </div>
       <img className="rounded-md max-w-[20vh] " src={img}></img>
+    </div>
+  );
+}
+
+export function PortfolioCard({
+  title,
+  techStack,
+  imageUrl,
+  gifUrl,
+  websiteUrl,
+  description,
+}: {
+  title: string;
+  techStack: string[];
+  imageUrl: string;
+  gifUrl?: string;
+  websiteUrl: string;
+  description: string;
+}) {
+  return (
+    <div className="bg-white/5 rounded-xl overflow-hidden hover:scale-[1.02] transition-transform duration-300 group">
+      <a href={websiteUrl} target="_blank" rel="noopener noreferrer">
+        <div className="relative aspect-video">
+          <img
+            src={imageUrl}
+            alt={title}
+            className={`object-cover w-full h-full transition-opacity duration-300 
+              ${gifUrl ? "group-hover:opacity-0" : ""}`}
+          />
+
+          {gifUrl && (
+            <img
+              src={gifUrl}
+              alt={`${title} animation`}
+              className="object-cover w-full h-full absolute top-0 left-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            />
+          )}
+        </div>
+
+        <div className="p-4 md:p-6">
+          <h3 className="text-xl md:text-2xl font-semibold mb-2">{title}</h3>
+
+          <p className="text-gray-300 text-sm md:text-base mb-4">
+            {description}
+          </p>
+
+          <div className="flex flex-wrap gap-2">
+            {techStack.map((tech) => (
+              <span
+                key={tech}
+                className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-xs md:text-sm"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </a>
+    </div>
+  );
+}
+
+export function PortfolioGrid({
+  projects,
+}: {
+  projects: Array<{
+    title: string;
+    techStack: string[];
+    imageUrl: string;
+    gifUrl?: string;
+    websiteUrl: string;
+    description: string;
+  }>;
+}) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto max-w-[140vh] px-4 py-6">
+      {projects.map((project) => (
+        <PortfolioCard key={project.title} {...project} />
+      ))}
     </div>
   );
 }

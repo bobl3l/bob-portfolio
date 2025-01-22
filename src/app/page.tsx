@@ -5,18 +5,97 @@ import feat from "@/asset/feat.png";
 import kungfood from "@/asset/kungfood hippo.png";
 import flight from "@/asset/flight simulator.png";
 import web from "@/asset/website.png";
-import { Experience, LogoLink, Projects } from "./ui/ui";
+import { Experience, LogoLink, PortfolioGrid, Projects } from "./ui/ui";
 import React from "react";
+import londonGP from "../asset/londongp.png";
+import londonGPgif from "../asset/Londongp-gif.gif";
+import webzaito from "@/asset/webzaito.png";
+import webzaitogif from "@/asset/webzaito-gif.gif";
+import SGProtein from "@/asset/SGProtein.png";
+import SGProteingif from "@/asset/SGProtein-gif.gif";
+import cwahomes from "@/asset/cwahomes.png";
+import cwahomesgif from "@/asset/cwahomes-gif.gif";
 
 export default function Home() {
   const about = React.useRef<HTMLDivElement>(null);
   const exp = React.useRef<HTMLDivElement>(null);
   const proj = React.useRef<HTMLDivElement>(null);
   const cert = React.useRef<HTMLDivElement>(null);
+  const projects = [
+    {
+      title: "The London General Practice",
+      techStack: [
+        "React",
+        "Node.js",
+        "express.js",
+        "Tailwind",
+        "MongoDB",
+        "AWS",
+      ],
+      imageUrl: londonGP.src,
+      gifUrl: londonGPgif.src,
+      websiteUrl: "https://www.thelondongeneralpractice.com",
+      description:
+        "A full stack website for medical services provider to connect with patients through microserves",
+    },
+    {
+      title: "SGProtein",
+      techStack: ["React", "Next.js", "Tailwind", "Vercel"],
+      imageUrl: SGProtein.src,
+      gifUrl: SGProteingif.src,
+      websiteUrl: "https://www.eatsgprotein.com",
+      description:
+        "Website for a food manufacturing company producing plant-based products",
+    },
+    {
+      title: "WebZaito",
+      techStack: ["React", "Next.js", "Tailwind", "vercel"],
+      imageUrl: webzaito.src,
+      gifUrl: webzaitogif.src,
+      websiteUrl: "https://www.webzaito.com",
+      description:
+        "Internet Solution provider with services such as brand and website creation and social media marketing",
+    },
+    {
+      title: "CWAHomes",
+      techStack: ["React"],
+      imageUrl: cwahomes.src,
+      gifUrl: cwahomesgif.src,
+      websiteUrl: "https://www.cwa-homes.com",
+      description: "Frontend portfolio page for architecture company",
+    },
 
+    // Add more projects...
+  ];
+  const tech = [
+    "React",
+    "Next.js",
+    "Node.js",
+    "express.js",
+    "JavaScript",
+    "TypeScript",
+    "Flutter",
+    "Tailwind",
+    "CSS",
+    "HTML",
+    "PHP",
+    "JAVA",
+    "Python",
+    "MongoDB",
+    "Firebase",
+    "GraphQL",
+    "SQL",
+    "Vercel",
+    "AWS",
+  ];
+  const techstacks = tech.map((t) => (
+    <span className="tag" key={t}>
+      {t}
+    </span>
+  ));
   return (
     <div className="min-h-full ">
-      <nav className="bg-black opacity-90 fixed w-full backdrop-blur-2xl">
+      <nav className="hidden md:block bg-black opacity-90 fixed w-full backdrop-blur-2xl">
         <div className="mx-auto  px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
             <div className="flex items-center">
@@ -56,62 +135,52 @@ export default function Home() {
 
       <main>
         {/*Main panel */}
-        <div className="mx-auto max-w-[150vh] px-4 py-6 sm:px-6 lg:px-12  flex justify-start items-center">
-          <div className="mx-auto max-w-5xl px-2 py-6 sm:px-6 lg:px-12 flex flex-col gap-5 ">
-            <div className="text-7xl font-black tracking-tight text-white">
+        <div className="mx-auto max-w-[150vh] px-4 py-6 sm:px-6 lg:px-12 flex flex-col md:flex-row justify-start items-center">
+          <div className="mx-auto max-w-5xl px-2 py-6 sm:px-6 lg:px-12 flex flex-col gap-5">
+            <div className="text-4xl md:text-7xl font-black tracking-tight text-white">
               Hello<span className="text-purple-500">,</span> My name is
+              <span className="text-purple-500"> Bob Liang</span>
             </div>
-            <div className="text-7xl font-black tracking-tight text-purple-500">
-              Bob Liang
-            </div>
+
             <h1 className="text-3xl font-light tracking-tight text-white">
-              I am a software developer / UX engineer ;)
+              I am a Full stack developer / UX engineer ;)
             </h1>
-            <a
-              className="max-w-40 bg-purple-900 hover:bg-purple-600 text-white font-black hover:scale-105 text-xs md:text-lg font-semibold p-3 rounded-xl text-center"
-              href="https://drive.google.com/file/d/1eMpv1LYLPG2Q2BlHHREXmp0j-9ocwqnU/view?usp=sharing"
-            >
-              My Resume
-            </a>
           </div>
-          <div className="px-8 py-10">
-            <img src={softeng.src} className="max-h-[60vh]" alt="softeng" />
+          <div className="px-4 md:px-8 py-5 md:py-10">
+            <img
+              src={softeng.src}
+              className="max-h-[40vh] md:max-h-[60vh]"
+              alt="softeng"
+            />
           </div>
         </div>
         {/*About me panel */}
         <div
           ref={about}
-          className="mx-auto max-w-[140vh] pt-40 px-4 py-6 sm:px-6 lg:px-12 flex justify-start items-center"
+          className="mx-auto max-w-[140vh] pt-20 md:pt-60 px-4 py-6 sm:px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center"
         >
           <hr className="flex-grow border-t border-purple-500" />
           <span className="px-3 text-purple-500 text-6xl font-black">
             About me
           </span>
         </div>
-        <div className="mx-auto max-w-[140vh]  px-4 py-6 sm:px-6 lg:px-12  flex justify-between items-start ">
-          <div className="max-w-[90vh] font-light flex flex-col gap-5 justify-start items-start">
+        <div className="mx-auto max-w-[140vh] px-4 py-6 sm:px-6 lg:px-12 flex flex-col md:flex-row justify-between items-start">
+          <div className="max-w-full md:max-w-[90vh] font-light flex flex-col gap-5 justify-start items-start">
             <p className="text-xl text-white">
-              Hi, I&apos;m Bob. I am fresh graduate from Singapore starting a
-              career in software development. I have always been interested in
-              the development of web applications and software so I dabbled
-              myself in all aspects of them. I have experience working on UI/UX
-              design, machine learning, front end development and back end
-              engineering.I am specialised in frontend development, with
-              proficiencies in multiple web app development framworks such as
-              React, React Native and Flutter.
+              Hi, I&apos;m Bob. I am a software developer from Singapore. I
+              primarily work with web development and native app development
+              while also working on UI/UX design for most of my projects. My
+              favourite stack is JavaScript/TypeScript. I have worked with many
+              JavaScript frameworks such as React/Next, React Native,
+              Node/Express and Angular. Besides that, I have also worked with
+              creating cross platform applications using Flutter, developing
+              backend API services using Python and deploying through platforms
+              such as Vercel and AWS.
             </p>
             <p className="text-xl text-white">
-              For my most recent working experience, I was working with a stack
-              that was completely new for me. However, as a fast learning with
-              the passion as drive to perform, I did not betray their trust as I
-              was able to deliver a satisfactory solution and completed the
-              development process ahead of time.
-            </p>
-            <p className="text-xl text-white">
-              I am currently looking for junior level opportunites in the United
-              Kingdom under the High Potential Individual (HPI) visa. *No visa
-              sponsorship required* If you think I will be a good fit for the
-              company, please feel free to contact me! I am looking forward to
+              I am currently located in London, UK, looking for junior
+              opportunities. If you think I will be a good fit for the company,
+              please feel free to contact me! I am looking forward to
               contributing to the success of your company.
             </p>
             <div className=" flex gap-3 md:gap-5 justify-start items-center">
@@ -136,36 +205,14 @@ export default function Home() {
               ></LogoLink>
             </div>
           </div>
-          <div className="max-w-[48vh] flex flex-col gap-2 px-4 ">
+          <div className="max-w-full md:max-w-[48vh] flex flex-col gap-2 px-2 md:px-4 mt-8 md:mt-0">
             <div className="flex items-center gap-3 justify-start">
               <svg className="w-7 md:w-10 " fill="#a855f7" viewBox="0 0 24 24">
                 <path d="M20.083 10.5l1.202.721a.5.5 0 010 .858L12 17.65l-9.285-5.571a.5.5 0 010-.858l1.202-.721L12 15.35l8.083-4.85zm0 4.7l1.202.721a.5.5 0 010 .858l-8.77 5.262a1 1 0 01-1.03 0l-8.77-5.262a.5.5 0 010-.858l1.202-.721L12 20.05l8.083-4.85zM12.514 1.309l8.771 5.262a.5.5 0 010 .858L12 13 2.715 7.429a.5.5 0 010-.858l8.77-5.262a1 1 0 011.03 0z" />
               </svg>
               <h3 className="font-bold text-2xl"> Experienced tech stack</h3>
             </div>
-            <p className=" gap-3 flex flex-wrap justify-between">
-              <span className="tag">JavaScript</span>
-              <span className="tag">Typecript</span>
-              <span className="tag">Next.js</span>
-              <span className="tag">Node.js</span>
-              <span className="tag">React Native</span>
-              <span className="tag">React</span>
-              <span className="tag">HTML</span>
-              <span className="tag">CSS</span>
-              <span className="tag">Tailwind</span>
-              <span className="tag">Dart</span>
-              <span className="tag">Flutter</span>
-              <span className="tag">PHP</span>
-              <span className="tag">Java</span>
-              <span className="tag">Python</span>
-              <span className="tag">Pytorch</span>
-              <span className="tag">C++</span>
-              <span className="tag">C#</span>
-              <span className="tag">MySQL</span>
-              <span className="tag">GraphQL</span>
-              <span className="tag">SQLite</span>
-              <span className="tag">Firebase</span>
-            </p>
+            <p className="flex flex-wrap gap-3 md:gap-4">{techstacks}</p>
             <br></br>
             <div className="flex items-center gap-3 justify-start">
               <svg className="w-7 md:w-10  " fill="#a855f7" viewBox="0 0 24 24">
@@ -186,13 +233,14 @@ export default function Home() {
         {/*Experience panel */}
         <div
           ref={exp}
-          className="mx-auto max-w-[140vh] pt-60 px-4 py-6 sm:px-6 lg:px-12  flex justify-start items-center"
+          className="mx-auto max-w-[140vh] pt-20 md:pt-60 px-4 py-6 sm:px-6 lg:px-12 flex justify-start items-center"
         >
           <span className="px-3 text-purple-500 text-6xl font-black">
             Experience
           </span>
           <hr className="flex-grow border-t border-purple-500" />
         </div>
+        <PortfolioGrid projects={projects} />
         <Experience
           company="Webzaito"
           duration="May - Sep 2024"
@@ -235,7 +283,7 @@ export default function Home() {
         >
           <hr className="flex-grow border-t border-purple-500" />
           <span className="px-3 text-purple-500 text-6xl font-black">
-            Projects
+            School Projects
           </span>
         </div>
         <div className="flex-1 flex-col ">
@@ -271,36 +319,40 @@ export default function Home() {
         {/*Certifications panel */}
         <div
           ref={cert}
-          className="mx-auto max-w-[140vh] pt-60 px-4 py-6 sm:px-6 lg:px-12  flex justify-start items-center"
+          className="mx-auto max-w-[140vh] px-4 py-6 sm:px-6 lg:px-12  flex justify-start items-center"
         >
           <span className="px-3 text-purple-500 text-6xl font-black">
             Certifications
           </span>
           <hr className="flex-grow border-t border-purple-500" />
         </div>
-        <div className="mx-auto max-w-[140vh] px-4 py-6 sm:px-6 lg:px-12  flex-1 justify-start items-center">
-          <div className="mx-auto max-w-[110vh] py-2 flex justify-between items-center">
-            <span className="text-2xl">Cloud Computing Foundations</span>
+        <div className="mx-auto max-w-[140vh] px-4 py-6 sm:px-6 lg:px-12 flex-1 justify-start items-center">
+          <div className="mx-auto max-w-[110vh] py-2 flex flex-col md:flex-row justify-between items-center gap-2">
+            <span className="text-xl md:text-2xl text-center md:text-left">
+              Cloud Computing Foundations
+            </span>
             <span className="text-purple-400">Duke University</span>
           </div>
-          <div className="mx-auto max-w-[110vh] py-2  flex justify-between items-center">
-            <span className="text-2xl">
+          <div className="mx-auto max-w-[110vh] py-2  flex flex-col md:flex-row justify-between items-center gap-2">
+            <span className="text-xl md:text-2xl text-center md:text-left">
               Exploring and Preparing your Data with BigQuery
             </span>
             <span className="text-purple-400">Google Cloud Education</span>
           </div>
-          <div className="mx-auto max-w-[110vh] py-2  flex justify-between items-center">
-            <span className="text-2xl">Introduction to Big Data</span>
+          <div className="mx-auto max-w-[110vh] py-2  flex flex-col md:flex-row justify-between items-center gap-2">
+            <span className="text-xl md:text-2xl text-center md:text-left">
+              Introduction to Big Data
+            </span>
             <span className="text-purple-400">UC San Diego</span>
           </div>
-          <div className="mx-auto max-w-[110vh] py-2  flex justify-between items-center">
-            <span className="text-2xl">
+          <div className="mx-auto max-w-[110vh] py-2  flex flex-col md:flex-row justify-between items-center gap-2">
+            <span className="text-xl md:text-2xl text-center md:text-left">
               Python for Everybody Specialization
             </span>
             <span className="text-purple-400">University of Michigan</span>
           </div>
-          <div className="mx-auto max-w-[110vh] py-2  flex justify-between items-center">
-            <span className="text-2xl">
+          <div className="mx-auto max-w-[110vh] py-2  flex flex-col md:flex-row justify-between items-center gap-2">
+            <span className="text-xl md:text-2xl text-center md:text-left">
               Innovation: From Creativity to Entrepreneurship Specialization
             </span>
             <span className="text-purple-400">University of Illinois</span>
